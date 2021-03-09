@@ -7,7 +7,7 @@ font-size: 3rem;
 -webkit-background-clip: text;
 `
 
-export const Subitulo = styled.h3`
+export const Subtitulo = styled.h3`
 background: #011540;
 font-size: 3rem;
 -webkit-text-fill-color: transparent;
@@ -18,6 +18,7 @@ export const AppLayout = styled.div`
   display: grid;
   height: 100vh;
   place-items: center;
+  padding: 30px;
 `
 export const Section = styled.div`
   display: grid;

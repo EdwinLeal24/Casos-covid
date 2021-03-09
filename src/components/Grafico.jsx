@@ -1,23 +1,22 @@
 import React from "react";
 import { XYPlot, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, LineSeries } from 'react-vis';
 
+const Grafico = ({ lista }) => {
 
-const Grafico = ({lista}) => {
-
-  const datosGrafico = lista.map((el, i) => {
+  const datosGrafico = lista.map(el => {
     return { x: new Date(el.data_ini), y: el.ingressos_total };
-  });
+});
 
 
   return (
     <>
-      <XYPlot xType="time" yDomain={[0, 500]} width={600} height={300}>
+    <XYPlot xType="time" yDomain={[0, 700]} width={600} height={300}>
         <HorizontalGridLines />
         <VerticalGridLines />
         <XAxis title="Fechas" />
-        <YAxis title="Casos confirmados" />
-        <LineSeries data={datosGrafico} />
-      </XYPlot>
+        <YAxis title="Ingresados total" />
+        <LineSeries data={datosGrafico} style={{strokeWidth: 2}} />
+      </XYPlot> 
     </>
   )
 }

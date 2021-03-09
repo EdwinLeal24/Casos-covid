@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Subitulo, Section } from '../styled/styles'
+import { Subtitulo, Section } from '../styled/styles'
 import { Container } from '../styled/style_home'
 import Table from './Table'
 import Grafico from './Grafico'
-
-const COD_BCN = 11
-const API_URL = `https://analisi.transparenciacatalunya.cat/resource/jvut-jxu8.json?codi=${COD_BCN}&residencia=No`;
 
 const Home = () => {
 
@@ -25,13 +22,14 @@ const Home = () => {
 
   return (
     <>
-      <Subitulo>Ultima semana en Barcelona</Subitulo>
+      <Subtitulo>Casos en Barcelona</Subtitulo>
       { (lista.length > 0) ? (
         <Section>
-          <Table lista={lista} />
           <Container>
-            <Grafico lista={lista} />
+            <Table lista={lista} />
           </Container>
+
+          <Grafico lista={lista} />
         </Section>
       ) : (
           <h1>Cargando...</h1>

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { AppLayout, Titulo, BotonHome, BotonBuscar } from '../styled/styles'
+import FindByComarca from "./FindByComarca";
 
 import Home from './Home'
 
@@ -27,7 +28,11 @@ const CovidApp = () => {
           </NavLink>
 
           <Switch>
-            <Route exactpath='/' component={Home} />
+            <Route exact path='/' component={Home} />
+          </Switch>
+
+          <Switch>
+            <Route path='/comarcas' component={FindByComarca} />
           </Switch>
 
         </BrowserRouter>
